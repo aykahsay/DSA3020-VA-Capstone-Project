@@ -1,17 +1,21 @@
 project:
-  name: crop_yield_prediction
-  target: yield
+  name: crop-yield-prediction
+  target: yield_value
+  random_state: 42
 
 data:
   crop: Maize
   country: Kenya
   start_year: 2000
   end_year: 2023
+  raw_path: data/raw
+  processed_path: data/processed
+  external_path: data/external
 
 model:
-  type: RandomForestRegressor
+  estimator: RandomForestRegressor
   test_size: 0.2
-  random_state: 42
-  hyperparameters:
-    n_estimators: 200
-    max_depth: 10
+  n_estimators: 200
+  max_depth: 10
+  save_path: models/best_model.pkl
+  scaler_path: models/scaler.pkl

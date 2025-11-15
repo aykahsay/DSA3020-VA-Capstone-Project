@@ -1,0 +1,11 @@
+pandas
+numpy
+requests
+pyyaml
+python-dotenv
+scikit-learn
+joblib
+streamlit
+matplotlib
+seaborn
+sqlalchemy

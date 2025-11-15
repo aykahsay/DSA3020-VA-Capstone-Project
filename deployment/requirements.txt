@@ -1,0 +1,9 @@
+# lightweight; used in Docker build if separate
+-pandas
+-numpy
+-requests
+-python-dotenv
+-pyyaml
+-scikit-learn
+-joblib
+-streamlit
