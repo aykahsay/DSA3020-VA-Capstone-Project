@@ -1,137 +1,105 @@
 """
-This module contains all code used to interact with the FAOSTAT API
-and the SQLite database for the Crop Yield Prediction Project.
-API configuration (like BASE_URL and country/crop settings) is
-stored in your `.env` file and loaded through the `config` module.
+Module for handling crop data retrieval and storage for Crop Yield Prediction.
+Uses FAOSTAT CSV downloads and SQLite for persistence.
 """
 
 import sqlite3
 import pandas as pd
-import requests
 from config import settings
+import os
 
-
-class FAOSTATAPI:
+class FAOSTATHandler:
     """
-    A class to interact with the FAOSTAT API for retrieving agricultural data.
+    Handles loading crop data from FAOSTAT CSV files.
     """
 
-    def __init__(self, base_url=settings.faostat_base_url):
-        self.__base_url = base_url
+    def __init__(self, raw_data_dir=settings.RAW_DATA_DIR):
+        self.raw_data_dir = raw_data_dir
+        os.makedirs(self.raw_data_dir, exist_ok=True)
 
-    def get_crop_data(self, crop, country, element="Yield", year_start=2000, year_end=2023):
+    def load_crop_csv(self, crop_file, element="Yield"):
         """
-        Retrieve crop data (yield/production/area harvested) from FAOSTAT API.
+        Load FAOSTAT CSV data for a crop.
 
         Parameters
         ----------
-        crop : str
-            Name of the crop (e.g., 'Maize', 'Wheat').
-        country : str
-            Country name (e.g., 'Kenya').
-        element : str, optional
-            FAOSTAT element to retrieve ('Yield', 'Production', etc.).
-        year_start : int
-            Starting year.
-        year_end : int
-            Ending year.
+        crop_file : str
+            Name of the CSV file in raw_data_dir (e.g., 'Maize.csv')
+        element : str
+            Column to extract (e.g., 'Yield', 'Production')
 
         Returns
         -------
         pd.DataFrame
-            DataFrame indexed by year, containing crop metrics.
+            DataFrame indexed by year with column `element.lower()`.
         """
+        path = os.path.join(self.raw_data_dir, crop_file)
+        if not os.path.exists(path):
+            raise FileNotFoundError(f"{path} not found. Download CSV first.")
 
-        endpoint = f"{self.__base_url}/QA/Crops"
-        params = {
-            "item": crop,
-            "element": element,
-            "area": country,
-            "year": f"{year_start},{year_end}"
-        }
-
-        response = requests.get(endpoint, params=params)
-
-        if response.status_code != 200:
-            raise ConnectionError(
-                f"FAOSTAT API request failed with status {response.status_code}"
-            )
-
-        data_json = response.json()
-
-        if "data" not in data_json or len(data_json["data"]) == 0:
-            raise ValueError(f"No FAOSTAT data found for {crop}, {country}, {element}")
-
-        df = pd.DataFrame(data_json["data"])
-
-        # Ensure essential columns exist
-        expected_cols = ["year", "value"]
-        for col in expected_cols:
-            if col not in df.columns:
-                raise KeyError(f"Missing expected column '{col}' in FAOSTAT response")
-
-        # Clean DataFrame
-        df = df[["year", "value"]]
-        df.rename(columns={"value": element.lower()}, inplace=True)
-
-        df["year"] = pd.to_numeric(df["year"])
+        df = pd.read_csv(path)
+        # Keep only essential columns
+        if not all(col in df.columns for col in ["Year", element]):
+            raise KeyError(f"CSV missing required columns: 'Year' or '{element}'")
+        df = df[["Year", element]].copy()
+        df.rename(columns={element: element.lower(), "Year": "year"}, inplace=True)
         df.set_index("year", inplace=True)
-
+        df[element.lower()] = pd.to_numeric(df[element.lower()], errors="coerce")
         return df
 
 
 class SQLRepository:
     """
-    A wrapper class to interact with SQLite database for storing and retrieving crop data.
+    Handles SQLite database operations for crop data.
     """
 
-    def __init__(self, connection):
-        self.connection = connection
+    def __init__(self, db_path=settings.DB_PATH):
+        self.db_path = db_path
+        self.connection = sqlite3.connect(self.db_path)
 
-    def insert_table(self, table_name, records: pd.DataFrame, if_exists="fail"):
+    def create_table(self, table_name, columns):
         """
-        Insert a DataFrame into SQLite table.
-        """
-
-        n_inserted = records.to_sql(
-            name=table_name,
-            con=self.connection,
-            if_exists=if_exists
-        )
-
-        return {
-            "transaction_successful": True,
-            "records_inserted": n_inserted
-        }
-
-    def read_table(self, table_name, limit=None):
-        """
-        Read data from a SQLite table.
+        Create table if it doesn't exist.
 
         Parameters
         ----------
         table_name : str
             Name of the table.
-        limit : int or None
-            Number of most recent records to retrieve.
+        columns : dict
+            Dictionary of {column_name: sqlite_type} e.g., {"year": "INTEGER", "yield": "REAL"}
+        """
+        col_defs = ", ".join([f"{k} {v}" for k, v in columns.items()])
+        sql = f"CREATE TABLE IF NOT EXISTS {table_name} ({col_defs})"
+        self.connection.execute(sql)
+        self.connection.commit()
+
+    def insert_table(self, table_name, records: pd.DataFrame, if_exists="fail"):
+        """
+        Insert a DataFrame into SQLite table.
+        """
+        n_inserted = records.to_sql(
+            name=table_name,
+            con=self.connection,
+            if_exists=if_exists
+        )
+        return {"transaction_successful": True, "records_inserted": n_inserted}
+
+    def read_table(self, table_name, limit=None):
+        """
+        Read data from a SQLite table.
 
         Returns
         -------
         pd.DataFrame
-            DataFrame indexed by year with numeric columns.
+            DataFrame indexed by year.
         """
-
         sql = f"SELECT * FROM '{table_name}'"
         if limit:
             sql += f" LIMIT {limit}"
 
-        df = pd.read_sql(
-            sql=sql,
-            con=self.connection,
-            index_col="year"
-        )
-
-        # Convert all numeric columns
+        df = pd.read_sql(sql, con=self.connection, index_col="year")
         df = df.apply(pd.to_numeric, errors="coerce")
-
         return df
+
+    def close(self):
+        self.connection.close()
