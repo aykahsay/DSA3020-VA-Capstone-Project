@@ -1,57 +1,40 @@
-"""
-Fetch FAOSTAT crop data and save raw csv.
-"""
-
-import os
-import requests
+# src/data_collection.py
 import pandas as pd
-from .config import settings
+from src.config import settings
 
-def fetch_faostat_crop(crop=None, country=None, year_start=None, year_end=None, save_csv=True):
-    crop = crop or settings.crop or settings.config["data"]["crop"]
-    country = country or settings.country or settings.config["data"]["country"]
-    year_start = year_start or settings.start_year
-    year_end = year_end or settings.end_year
+class MaizeDataHandler:
+    """
+    Handles loading, cleaning, and combining maize price datasets (agribora + KAMIS)
+    """
+    def __init__(self):
+        self.agribora_csv = settings.AGRIBORA_CSV
+        self.kamis_raw_csv = settings.KAMIS_RAW_CSV
+        self.kamis_csv = settings.KAMIS_CSV
 
-    base = settings.faostat_base_url or settings.config.get("faostat_base_url") or "https://fenixservices.fao.org/faostat/api/v1/en"
-    # FAOSTAT QA/Crops or QCL/production endpoints vary; using QA/Crops where available
-    # Example endpoint used earlier: /QA/Crops
-    endpoint = f"{base}/QA/Crops"
+    def load_agribora(self):
+        """Load agriBORA maize price data"""
+        df = pd.read_csv(self.agribora_csv)
+        df['Date'] = pd.to_datetime(df['Date'])
+        return df
 
-    params = {
-        "item": crop,
-        "element": "Yield",     # yield element
-        "area": country,
-        "year": f"{year_start},{year_end}"
-    }
+    def load_kamis_raw(self):
+        """Load raw KAMIS maize price data"""
+        df = pd.read_csv(self.kamis_raw_csv)
+        df['Date'] = pd.to_datetime(df['Date'])
+        return df
 
-    resp = requests.get(endpoint, params=params, timeout=30)
-    resp.raise_for_status()
-    j = resp.json()
+    def load_kamis_processed(self):
+        """Load processed KAMIS data"""
+        df = pd.read_csv(self.kamis_csv)
+        df['Date'] = pd.to_datetime(df['Date'])
+        return df
 
-    if "data" not in j:
-        raise ValueError("Unexpected FAOSTAT response: no 'data' field")
-
-    df = pd.DataFrame(j["data"])
-
-    # normalize columns: keep year, area, item, element, value
-    # FAOSTAT responses can include many fields; select safest subset
-    for col in ["year", "area", "item", "value", "element"]:
-        if col not in df.columns:
-            df[col] = None
-
-    df = df[["year", "area", "item", "element", "value"]].rename(columns={"value": "yield_value"})
-    df["year"] = pd.to_numeric(df["year"], errors="coerce").astype("Int64")
-
-    # persist
-    raw_dir = settings.config["data"]["raw_path"]
-    os.makedirs(raw_dir, exist_ok=True)
-    out = os.path.join(raw_dir, f"{crop}_{country}_yield_{year_start}_{year_end}.csv")
-    if save_csv:
-        df.to_csv(out, index=False)
-
-    return df
-
-if __name__ == "__main__":
-    df = fetch_faostat_crop()
-    print(df.head())
+    def combine_datasets(self, use_processed_kamis=True):
+        """Combine agriBORA and KAMIS data"""
+        agribora = self.load_agribora()
+        kamis = self.load_kamis_processed() if use_processed_kamis else self.load_kamis_raw()
+        
+        combined = pd.concat([agribora, kamis], ignore_index=True)
+        combined.sort_values(by=['County','Date'], inplace=True)
+        combined.reset_index(drop=True, inplace=True)
+        return combined

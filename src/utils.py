@@ -1,14 +1,21 @@
-import os
-import joblib
 import pandas as pd
+import numpy as np
 
-def save_df_csv(df: pd.DataFrame, path: str):
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    df.to_csv(path, index=False)
+def add_time_features(df, date_col='Date'):
+    """
+    Adds Year, Month, WeekofYear columns for modeling.
+    """
+    df[date_col] = pd.to_datetime(df[date_col], errors='coerce')
+    df['Year'] = df[date_col].dt.year
+    df['Month'] = df[date_col].dt.month
+    df['WeekofYear'] = df[date_col].dt.isocalendar().week
+    df['Year_Week'] = df['Year'].astype(str) + "-" + df['WeekofYear'].astype(str)
+    return df
 
-def load_model(path: str):
-    return joblib.load(path)
-
-def save_model(model, path: str):
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    joblib.dump(model, path)
+def log_transform_columns(df, cols):
+    """
+    Applies log transformation to numeric columns to reduce skewness.
+    """
+    for col in cols:
+        df[col + "_log"] = np.log1p(df[col])
+    return df

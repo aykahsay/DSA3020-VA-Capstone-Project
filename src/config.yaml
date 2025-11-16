@@ -10,7 +10,6 @@ data:
   end_year: 2023
   raw_path: data/raw
   processed_path: data/processed
-  external_path: data/external
 
 model:
   estimator: RandomForestRegressor
