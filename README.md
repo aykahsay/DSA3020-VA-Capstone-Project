@@ -93,6 +93,9 @@ The project follows the **CRISP-DM (Cross-Industry Standard Process for Data Min
 4. **Evaluation & Tuning:**
 
    * Use cross-validation and appropriate regression metrics (RMSE, MAE, R²).
+   * This project uses multi-metric evaluation. There are two error metrics: Mean Absolute Error (MAE) and Root Mean Square Error (RMSE).
+   * MAE (50%): measures the average magnitude of errors between predicted and actual values. This metric is less sensitive to outliers compared to other error metrics such as Mean Squared Error (MSE). It is a suitable choice for financial forecasting.
+RMSE (50%): measures the deviation of your predictions from the actual values, but penalises large errors more heavily.
    * Fine-tune hyperparameters and interpret results in a business context.
 
 5. **Deployment:**
