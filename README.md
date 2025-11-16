@@ -1,12 +1,14 @@
-Perfect! Here’s a **complete, polished GitHub README** for your DSA3020 VA Capstone Project:
-
----
-
 ## **DSA3020 VA Capstone Project**
+### Project Overview
+
+This project aims to **predict weekly average maize prices** in selected counties in Kenya using historical retail and wholesale price data. The project applies **machine learning** to forecast prices, helping farmers, traders, and policymakers make informed decisions.
+
+The project uses the **CRISP-DM methodology** and follows an end-to-end ML pipeline—from problem definition and data collection to model deployment and evaluation.
+
 
 ![Python](https://img.shields.io/badge/python-3.10-blue) ![License](https://img.shields.io/badge/license-MIT-green)
 
-## Table of Contents
+### Table of Contents
 
 1. [Project Overview](#project-overview)
 2. [Problem Statement](#problem-statement)
@@ -18,20 +20,6 @@ Perfect! Here’s a **complete, polished GitHub README** for your DSA3020 VA Cap
 8. [Folder Structure](#folder-structure)
 9. [Getting Started](#getting-started)
 10. [References](#references)
-
----
-
-Perfect! Here's a polished, full **GitHub README** for your DSA3020 VA Capstone Project, ready to use:
-
----
-
-# DSA3020 VA Capstone Project: Maize Price Forecasting in Kenya
-
-## Project Overview
-
-This project aims to **predict weekly average maize prices** in selected counties in Kenya using historical retail and wholesale price data. The project applies **machine learning** to forecast prices, helping farmers, traders, and policymakers make informed decisions.
-
-The project uses the **CRISP-DM methodology** and follows an end-to-end ML pipeline—from problem definition and data collection to model deployment and evaluation.
 
 ---
 
@@ -67,144 +55,146 @@ The project uses the **CRISP-DM methodology** and follows an end-to-end ML pipel
 | Wholesale                | Wholesale price per Kg                                   |
 | Unit                     | Unit of measurement                                      |
 
-### Optional External Features
-
-* Precipitation
-* Vegetation indices (NDVI)
-* Other environmental data to improve predictive accuracy
+Here’s a polished and professional **README** draft for your GitHub project, incorporating the information you provided and structuring it in a way that’s clear, informative, and appealing to potential users or collaborators:
 
 ---
 
-## Methodology: CRISP-DM Alignment
+# DSA3020-VA Capstone Project: Maize Price Forecasting in Kenya
 
-### 1. Business Understanding
+## Project Overview
 
-* Objective: Predict weekly maize prices in selected counties.
-* Target: Retail price per Kg (regression).
-* Forecast Horizon: Two-week ahead predictions, six-week period.
-* ML Justification: Captures historical trends and relationships in prices, commodities, and market factors.
+Smallholder farmers across Africa often face **price volatility** and **post-harvest losses** of up to 40%. **agriBORA**, a Kenyan agri-tech startup, provides certified warehouses where farmers can safely store maize, obtain digital warehouse certificates, access loans, and choose the optimal selling time. Accurate market price information is crucial for farmers to make informed decisions and maximize returns.
 
-### 2. Data Understanding
+This project focuses on using **historical maize prices in Kenya** to develop a **machine learning solution** for forecasting weekly market prices. The solution aims to support farmers in counties including **Kiambu, Kirinyaga, Mombasa, Nairobi, and Uasin-Gishu**.
 
-* Explored missing values, outliers, and correlations.
-* Visualized Retail vs Wholesale prices.
-* Identified trends by commodity type, county, and market.
+**Objective:**
 
-### 3. Data Preparation
+* Predict **average weekly prices of dry maize** using historical data and relevant external features (e.g., weather, NDVI).
+* Generate forecasts for **two consecutive weeks** at each prediction step.
+* Forecasting period: **6 consecutive weeks from November 17, 2025, to January 10, 2026**.
 
-* Removed duplicates and handled missing values (SupplyVolume ~20%, Retail/Wholesale ~4–8%).
-* Log-transformed Retail and Wholesale prices for stabilization.
-* Extracted time features (Year, Month, WeekofYear).
-* Filtered out extreme outliers (0.1–0.9 quantiles).
-* Integrated KAMIS and agriBORA datasets; optional external signals included.
+**Impact:**
+Accurate forecasts will help farmers:
 
-### 4. Modeling
+* Time their maize sales effectively.
+* Increase earnings.
+* Strengthen agriBORA’s integrated storage, credit, and market intelligence services.
 
-* Algorithms: Linear Regression, Random Forest, Gradient Boosting.
-* Features: Wholesale price, SupplyVolume, Commodity type, Market, County, time features, external signals.
-* Model Selection: Random Forest/Gradient Boosting chosen based on cross-validation performance.
+---
 
-### 5. Evaluation
+## Data
 
-* Metrics: RMSE, MAE, R²
-* Interpretation: Models capture trends and seasonality; log-transformed prices improved correlation and stability.
+The project uses two primary datasets:
 
-### 6. Deployment
+1. **KAMIS Data:**
 
-* Model saved with `joblib` or `pickle`.
-* Deployed using **Streamlit** for interactive weekly price predictions.
-* Future Work: Incorporate additional environmental and geospatial datasets to improve performance.
+   * Historical prices for three maize types: white, yellow, and mixed-traditional.
+   * Available at various markets in Kenya from 2021–2025.
+
+2. **agriBORA Data:**
+
+   * Transaction-level wholesale prices of white maize between businesses.
+   * Target data for forecasting.
+---
+
+## Methodology
+
+The project follows the **CRISP-DM (Cross-Industry Standard Process for Data Mining)** framework:
+
+1. **Business Understanding:**
+
+   * Identify price prediction as a regression problem.
+   * Clearly define objectives to forecast maize prices for targeted counties.
+
+2. **Data Understanding & Preprocessing:**
+
+   * Clean, merge, and explore KAMIS and agriBORA datasets.
+   * Handle missing values, anomalies, and outliers.
+   * Add time-based features (week of year, month, etc.).
+
+3. **Modeling:**
+
+   * Compare multiple regression models (e.g., Linear Regression, Random Forest, Gradient Boosting, LSTM for time series).
+   * Feature engineering to improve predictive power.
+
+4. **Evaluation & Tuning:**
+
+   * Use cross-validation and appropriate regression metrics (RMSE, MAE, R²).
+   * Fine-tune hyperparameters and interpret results in a business context.
+
+5. **Deployment:**
+
+   * Save final model using `joblib` or `pickle`.
+   * Deploy via a simple **web app** or **dashboard** (Streamlit, Flask, or FastAPI) for interactive forecasts.
+
+---
+
+## Folder Structure
+
+```
+DSA3020-VA-Capstone-Project/
+│
+├─ DATA/
+│   ├─ raw/
+│   │   ├─ agribora_maize_prices.csv
+│   │   ├─ kamis_maize_prices_raw.csv
+│   │   └─ kamis_maize_prices.csv
+│   └─ database/
+│       └─ crop_data.db
+│
+├─ src/
+│   ├─ data_collection.py
+│   ├─ config.py
+│   └─ utils.py
+│
+├─ notebooks/
+│   └─ EDA_and_Modeling.ipynb
+│
+├─ models/
+│   └─ trained_model.pkl
+│
+├─ README.md
+└─ requirements.txt
+```
 
 ---
 
 ## Getting Started
 
-### Prerequisites
-
-* Python 3.10+
-* Packages: pandas, numpy, scikit-learn, matplotlib, seaborn, joblib, streamlit
+**Installation:**
 
 ```bash
+git clone https://github.com/<your-username>/DSA3020-VA-Capstone-Project.git
+cd DSA3020-VA-Capstone-Project
 pip install -r requirements.txt
 ```
 
-### Folder Structure
-
-```
-DSA3020-VA-Capstone-Project/
-├─ data/
-│  ├─ raw/              # Original CSV files
-│  └─ database/         # SQLite database
-├─ notebooks/           # Jupyter notebooks for EDA, modeling, and experiments
-├─ src/
-│  ├─ data_collection.py
-│  ├─ config.py
-│  └─ utils.py
-├─ models/              # Saved ML models (joblib/pickle)
-├─ app/                 # Streamlit/Flask/FastAPI web app
-├─ README.md
-└─ requirements.txt
-```
-
-### Example Usage
+**Usage:**
 
 ```python
-from src.data_collection import FAOSTATHandler, SQLRepository
+from src.data_collection import MaizeDataHandler
 
-# Load raw data
-faostat = FAOSTATHandler()
-df = faostat.load_raw_csv("maize_kenya_2021_2025.csv")
+handler = MaizeDataHandler()
+df = handler.load_combined_data()  # Load and combine KAMIS + agriBORA data
+df = handler.add_time_features(df)  # Add useful features
 
-# Preprocess and feature engineering
-df = faostat.preprocess(df)
-
-# Train model
-from src.modeling import train_model
-model = train_model(df)
-
-# Save model
-import joblib
-joblib.dump(model, "models/maize_price_model.pkl")
-```
-
-### Run Web App (Streamlit)
-
-```bash
-streamlit run app/maize_price_forecast_app.py
+# Train and evaluate model
+from src.utils import train_model
+model, metrics = train_model(df, target='Wholesale')
 ```
 
 ---
 
 ## Deliverables
 
-1. **Technical Report**
-
-   * Introduction & Problem Statement
-   * Literature Review
-   * Methodology (CRISP-DM)
-   * Data Description & Preprocessing
-   * Model Development & Evaluation
-   * Results and Discussion
-   * Conclusion & Future Work
-   * References
-
-2. **Presentation Demo** (10–15 minutes)
-
-3. **GitHub Repository**
-
-   * Well-structured codebase
-   * Evidence of individual contributions (commits, notebooks)
-   * Documentation and explanations
+1. **Technical Report**: Includes problem statement, literature review, methodology, data description, model development, evaluation, results, discussion, and future work.
+2. **Presentation/Demo**: 10–15 minute walkthrough of the solution with slides and live demo.
+3. **GitHub Repository**: Well-structured code, evidence of individual contributions, and documentation.
 
 ---
 
-## License
+## References
 
-MIT License (or your preferred license)
-
----
-
-If you want, I can also **write a short, professional project description** for the GitHub homepage that is concise and appealing for viewers or potential employers.
-
-Do you want me to do that next?
-
+* KAMIS – Kenya Agricultural Market Information System
+* agriBORA Data API
+* Relevant academic papers on commodity price prediction and time-series forecasting
