@@ -25,21 +25,32 @@ The project uses the **CRISP-DM methodology** and follows an end-to-end ML pipel
 
 ## Problem Statement
 
-* **Business Objective:** Predict weekly maize prices in Kiambu, Kirinyaga, Mombasa, Nairobi, and Uasin-Gishu counties to support market planning and price stabilization strategies.
-* **Target Variable:** Weekly average retail price of maize (regression).
-* **Forecast Horizon:** Two-week predictions over a six-week period (Nov 17, 2025 – Jan 10, 2026).
-* **Why ML:** Historical price patterns, seasonal trends, and market features can be modeled to forecast future prices accurately.
+Smallholder farmers across Africa often face **price volatility** and **post-harvest losses** of up to 40%. **agriBORA**, a Kenyan agri-tech startup, provides certified warehouses where farmers can safely store maize, obtain digital warehouse certificates, access loans, and choose the optimal selling time. Accurate market price information is crucial for farmers to make informed decisions and maximize returns.
 
+This project focuses on using **historical maize prices in Kenya** to develop a **machine learning solution** for forecasting weekly market prices. The solution aims to support farmers in counties including **Kiambu, Kirinyaga, Mombasa, Nairobi, and Uasin-Gishu**.
+
+**Objective:**
+
+* Predict **average weekly prices of dry maize** using historical data and relevant external features (e.g., weather, NDVI).
+* Generate forecasts for **two consecutive weeks** at each prediction step.
+* Forecasting period: **6 consecutive weeks from November 17, 2025, to January 10, 2026**.
+
+**Impact:**
+Accurate forecasts will help farmers:
+
+* Time their maize sales effectively.
+* Increase earnings.
+* Strengthen agriBORA’s integrated storage, credit, and market intelligence services.
 ---
 
-## Datasets
+### Datasets
 
-### Primary Sources
+#### Primary Sources
 
 1. **KAMIS Data:** Historical wholesale and retail prices of white, yellow, and mixed-traditional maize (2021–2025).
 2. **agriBORA Data:** Transaction-level weekly wholesale prices (main dataset for forecasting).
 
-### Features
+#### Features
 
 | Feature                  | Description                                              |
 | ------------------------ | -------------------------------------------------------- |
@@ -59,45 +70,7 @@ Here’s a polished and professional **README** draft for your GitHub project, i
 
 ---
 
-# DSA3020-VA Capstone Project: Maize Price Forecasting in Kenya
-
-## Project Overview
-
-Smallholder farmers across Africa often face **price volatility** and **post-harvest losses** of up to 40%. **agriBORA**, a Kenyan agri-tech startup, provides certified warehouses where farmers can safely store maize, obtain digital warehouse certificates, access loans, and choose the optimal selling time. Accurate market price information is crucial for farmers to make informed decisions and maximize returns.
-
-This project focuses on using **historical maize prices in Kenya** to develop a **machine learning solution** for forecasting weekly market prices. The solution aims to support farmers in counties including **Kiambu, Kirinyaga, Mombasa, Nairobi, and Uasin-Gishu**.
-
-**Objective:**
-
-* Predict **average weekly prices of dry maize** using historical data and relevant external features (e.g., weather, NDVI).
-* Generate forecasts for **two consecutive weeks** at each prediction step.
-* Forecasting period: **6 consecutive weeks from November 17, 2025, to January 10, 2026**.
-
-**Impact:**
-Accurate forecasts will help farmers:
-
-* Time their maize sales effectively.
-* Increase earnings.
-* Strengthen agriBORA’s integrated storage, credit, and market intelligence services.
-
----
-
-## Data
-
-The project uses two primary datasets:
-
-1. **KAMIS Data:**
-
-   * Historical prices for three maize types: white, yellow, and mixed-traditional.
-   * Available at various markets in Kenya from 2021–2025.
-
-2. **agriBORA Data:**
-
-   * Transaction-level wholesale prices of white maize between businesses.
-   * Target data for forecasting.
----
-
-## Methodology
+### Methodology
 
 The project follows the **CRISP-DM (Cross-Industry Standard Process for Data Mining)** framework:
 
