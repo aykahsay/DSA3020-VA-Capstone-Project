@@ -115,6 +115,7 @@ This project forecasts weekly white maize prices in selected Kenyan counties (Ki
 | ----- | ------------ | -------- | ----------- | ------- |
 | LR    | 3.12         | 3.97     | 0.91        | 0.78    |
 | RF    | 1.37         | 6.61     | 0.98        | 0.67    |
+| RF_tune   | 2.51        | 4.83     | 0.94       | 0.73   |
 
 > **Overfitting and under Fitting :** Random Forest fits the training data closely, capturing every fluctuation. This can lead to poor generalization on new or unseen data, as reflected in the higher test MAE and lower test R².
 
