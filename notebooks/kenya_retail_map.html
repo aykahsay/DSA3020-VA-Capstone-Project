@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9e00e0ff285ea3074bf82579560d75e5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_9e00e0ff285ea3074bf82579560d75e5" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9e00e0ff285ea3074bf82579560d75e5 = L.map(
+                "map_9e00e0ff285ea3074bf82579560d75e5",
+                {
+                    center: [0.0236, 37.9062],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1ef971b328e335fca461749ee88f3672 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_1ef971b328e335fca461749ee88f3672.addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+            var circle_marker_728c6368fa1bd338d12c06cf16d78492 = L.circleMarker(
+                [0.469, 35.99],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_ed5d26c596e86d504e444ea2baf43284 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e1af9e462eddbe389eddf086161fc925 = $(`<div id="html_e1af9e462eddbe389eddf086161fc925" style="width: 100.0%; height: 100.0%;">Baringo: KES 56.79</div>`)[0];
+                popup_ed5d26c596e86d504e444ea2baf43284.setContent(html_e1af9e462eddbe389eddf086161fc925);
+            
+        
+
+        circle_marker_728c6368fa1bd338d12c06cf16d78492.bindPopup(popup_ed5d26c596e86d504e444ea2baf43284)
+        ;
+
+        
+    
+    
+            var circle_marker_7cb6b3338560666e87aabbf83f6c1b05 = L.circleMarker(
+                [-0.801, 35.342],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_88b17cf927864c70fa1fef93c6b89415 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c142b722982ab54ccf04cf0569c5bdb4 = $(`<div id="html_c142b722982ab54ccf04cf0569c5bdb4" style="width: 100.0%; height: 100.0%;">Bomet: KES 59.23</div>`)[0];
+                popup_88b17cf927864c70fa1fef93c6b89415.setContent(html_c142b722982ab54ccf04cf0569c5bdb4);
+            
+        
+
+        circle_marker_7cb6b3338560666e87aabbf83f6c1b05.bindPopup(popup_88b17cf927864c70fa1fef93c6b89415)
+        ;
+
+        
+    
+    
+            var circle_marker_354c826aa8818442d7c9246091f9b4c0 = L.circleMarker(
+                [0.569, 34.564],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_5495fc42c1eab82e7743e1a18289226c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d7e80560828deb9ebdaac2f664564a9e = $(`<div id="html_d7e80560828deb9ebdaac2f664564a9e" style="width: 100.0%; height: 100.0%;">Bungoma: KES 55.40</div>`)[0];
+                popup_5495fc42c1eab82e7743e1a18289226c.setContent(html_d7e80560828deb9ebdaac2f664564a9e);
+            
+        
+
+        circle_marker_354c826aa8818442d7c9246091f9b4c0.bindPopup(popup_5495fc42c1eab82e7743e1a18289226c)
+        ;
+
+        
+    
+    
+            var circle_marker_5fd31baa01cdf947299fd14af63f7827 = L.circleMarker(
+                [0.434, 34.124],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_263be237ae1e82e05855a0b9acdcaa50 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8aee3ee4d94687814b6f1b7d76092786 = $(`<div id="html_8aee3ee4d94687814b6f1b7d76092786" style="width: 100.0%; height: 100.0%;">Busia: KES 59.87</div>`)[0];
+                popup_263be237ae1e82e05855a0b9acdcaa50.setContent(html_8aee3ee4d94687814b6f1b7d76092786);
+            
+        
+
+        circle_marker_5fd31baa01cdf947299fd14af63f7827.bindPopup(popup_263be237ae1e82e05855a0b9acdcaa50)
+        ;
+
+        
+    
+    
+            var circle_marker_fe4d512138d936d2752c484abc7b5d88 = L.circleMarker(
+                [1.046, 35.363],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_29ffb42a4bb570094ed1515868d5878c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_76b9c078fb41ab5dbaedb456b29f4aeb = $(`<div id="html_76b9c078fb41ab5dbaedb456b29f4aeb" style="width: 100.0%; height: 100.0%;">Elgeyo-Marakwet: KES 52.70</div>`)[0];
+                popup_29ffb42a4bb570094ed1515868d5878c.setContent(html_76b9c078fb41ab5dbaedb456b29f4aeb);
+            
+        
+
+        circle_marker_fe4d512138d936d2752c484abc7b5d88.bindPopup(popup_29ffb42a4bb570094ed1515868d5878c)
+        ;
+
+        
+    
+    
+            var circle_marker_239a857f9dbab97d782bb15dceb0dec4 = L.circleMarker(
+                [-0.531, 37.456],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_6228d024985b06bb95e0b39d143172da = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c070292a626b0460446b112acade2cbf = $(`<div id="html_c070292a626b0460446b112acade2cbf" style="width: 100.0%; height: 100.0%;">Embu: KES 69.34</div>`)[0];
+                popup_6228d024985b06bb95e0b39d143172da.setContent(html_c070292a626b0460446b112acade2cbf);
+            
+        
+
+        circle_marker_239a857f9dbab97d782bb15dceb0dec4.bindPopup(popup_6228d024985b06bb95e0b39d143172da)
+        ;
+
+        
+    
+    
+            var circle_marker_5c796305e807e1bd6a4c8f17173889a5 = L.circleMarker(
+                [-0.453, 39.654],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_117312a061ae1ae469c285b2aca56c7f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_13e6fed1904dde0138c77b9b49e14ff6 = $(`<div id="html_13e6fed1904dde0138c77b9b49e14ff6" style="width: 100.0%; height: 100.0%;">Garissa: KES 79.56</div>`)[0];
+                popup_117312a061ae1ae469c285b2aca56c7f.setContent(html_13e6fed1904dde0138c77b9b49e14ff6);
+            
+        
+
+        circle_marker_5c796305e807e1bd6a4c8f17173889a5.bindPopup(popup_117312a061ae1ae469c285b2aca56c7f)
+        ;
+
+        
+    
+    
+            var circle_marker_53a8387b22615c778dc87725e29fbb8e = L.circleMarker(
+                [-0.495, 34.639],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_7506073488fb0fd01eee7d28052dee1b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9d1ae9b430ede44f83bf07b9c077b972 = $(`<div id="html_9d1ae9b430ede44f83bf07b9c077b972" style="width: 100.0%; height: 100.0%;">Homa Bay: KES 63.06</div>`)[0];
+                popup_7506073488fb0fd01eee7d28052dee1b.setContent(html_9d1ae9b430ede44f83bf07b9c077b972);
+            
+        
+
+        circle_marker_53a8387b22615c778dc87725e29fbb8e.bindPopup(popup_7506073488fb0fd01eee7d28052dee1b)
+        ;
+
+        
+    
+    
+            var circle_marker_fee2a9a167e0a510097162a77692a432 = L.circleMarker(
+                [0.352, 38.57],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_a2f4ac843fdbaf891a4b1e88f7cd968b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_69f938c0cc49797833cf3e340629aa3e = $(`<div id="html_69f938c0cc49797833cf3e340629aa3e" style="width: 100.0%; height: 100.0%;">Isiolo: KES 76.37</div>`)[0];
+                popup_a2f4ac843fdbaf891a4b1e88f7cd968b.setContent(html_69f938c0cc49797833cf3e340629aa3e);
+            
+        
+
+        circle_marker_fee2a9a167e0a510097162a77692a432.bindPopup(popup_a2f4ac843fdbaf891a4b1e88f7cd968b)
+        ;
+
+        
+    
+    
+            var circle_marker_5ae9cac9042ecaac98d350d4bddb814d = L.circleMarker(
+                [-2.098, 36.789],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_5a996031dcc147980a396cb4973398e3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7c46236c712fa47c52eb2f19c74f7783 = $(`<div id="html_7c46236c712fa47c52eb2f19c74f7783" style="width: 100.0%; height: 100.0%;">Kajiado: KES 63.78</div>`)[0];
+                popup_5a996031dcc147980a396cb4973398e3.setContent(html_7c46236c712fa47c52eb2f19c74f7783);
+            
+        
+
+        circle_marker_5ae9cac9042ecaac98d350d4bddb814d.bindPopup(popup_5a996031dcc147980a396cb4973398e3)
+        ;
+
+        
+    
+    
+            var circle_marker_e182df079d956df6989d8434798e38c8 = L.circleMarker(
+                [0.307, 34.751],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_70235b9263d75ff9159f0fba7f3ae1ce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0afc5343624895a78a7308f40d890e8e = $(`<div id="html_0afc5343624895a78a7308f40d890e8e" style="width: 100.0%; height: 100.0%;">Kakamega: KES 52.92</div>`)[0];
+                popup_70235b9263d75ff9159f0fba7f3ae1ce.setContent(html_0afc5343624895a78a7308f40d890e8e);
+            
+        
+
+        circle_marker_e182df079d956df6989d8434798e38c8.bindPopup(popup_70235b9263d75ff9159f0fba7f3ae1ce)
+        ;
+
+        
+    
+    
+            var circle_marker_467943a482852e3d566200c8950db379 = L.circleMarker(
+                [-0.377, 35.279],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_7d8d67d21a07f4778b9201c096a4b137 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3264831682097556824bac3f2e73d1c6 = $(`<div id="html_3264831682097556824bac3f2e73d1c6" style="width: 100.0%; height: 100.0%;">Kericho: KES 61.24</div>`)[0];
+                popup_7d8d67d21a07f4778b9201c096a4b137.setContent(html_3264831682097556824bac3f2e73d1c6);
+            
+        
+
+        circle_marker_467943a482852e3d566200c8950db379.bindPopup(popup_7d8d67d21a07f4778b9201c096a4b137)
+        ;
+
+        
+    
+    
+            var circle_marker_dc0935388a5d6fb4885f06d0c4d5373f = L.circleMarker(
+                [-1.03, 36.868],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_8414be394cd047280b9b4635a2feb1a9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9cefbf2b80645596eae422f0998d5159 = $(`<div id="html_9cefbf2b80645596eae422f0998d5159" style="width: 100.0%; height: 100.0%;">Kiambu: KES 56.62</div>`)[0];
+                popup_8414be394cd047280b9b4635a2feb1a9.setContent(html_9cefbf2b80645596eae422f0998d5159);
+            
+        
+
+        circle_marker_dc0935388a5d6fb4885f06d0c4d5373f.bindPopup(popup_8414be394cd047280b9b4635a2feb1a9)
+        ;
+
+        
+    
+    
+            var circle_marker_3d55f341bdb0b2884bfd5509c1cb716b = L.circleMarker(
+                [-3.51, 39.8],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_7b83f2a395b062e69f4aae007dd0ad63 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e421883418ea19cb770a34d53f3e25ba = $(`<div id="html_e421883418ea19cb770a34d53f3e25ba" style="width: 100.0%; height: 100.0%;">Kilifi: KES 70.71</div>`)[0];
+                popup_7b83f2a395b062e69f4aae007dd0ad63.setContent(html_e421883418ea19cb770a34d53f3e25ba);
+            
+        
+
+        circle_marker_3d55f341bdb0b2884bfd5509c1cb716b.bindPopup(popup_7b83f2a395b062e69f4aae007dd0ad63)
+        ;
+
+        
+    
+    
+            var circle_marker_d0d2eea374e6e1d538242a911bbb78bb = L.circleMarker(
+                [-0.498, 37.318],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_f79ff0b9872d0624ba8160fbde6fa55f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f0e57a1848137d0dceb81232eb9bbba4 = $(`<div id="html_f0e57a1848137d0dceb81232eb9bbba4" style="width: 100.0%; height: 100.0%;">Kirinyaga: KES 61.19</div>`)[0];
+                popup_f79ff0b9872d0624ba8160fbde6fa55f.setContent(html_f0e57a1848137d0dceb81232eb9bbba4);
+            
+        
+
+        circle_marker_d0d2eea374e6e1d538242a911bbb78bb.bindPopup(popup_f79ff0b9872d0624ba8160fbde6fa55f)
+        ;
+
+        
+    
+    
+            var circle_marker_b02d8ec5151685109c65851774666448 = L.circleMarker(
+                [-0.681, 34.778],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_cde0f55a8bae468a6578768a7024dc6b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c37e9fda661626edb0004acbebe9861d = $(`<div id="html_c37e9fda661626edb0004acbebe9861d" style="width: 100.0%; height: 100.0%;">Kisii: KES 48.14</div>`)[0];
+                popup_cde0f55a8bae468a6578768a7024dc6b.setContent(html_c37e9fda661626edb0004acbebe9861d);
+            
+        
+
+        circle_marker_b02d8ec5151685109c65851774666448.bindPopup(popup_cde0f55a8bae468a6578768a7024dc6b)
+        ;
+
+        
+    
+    
+            var circle_marker_1c223896e68cf84c0af34c8375226b7b = L.circleMarker(
+                [-0.091, 34.761],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_e042230c76ed36e88cc7721ece8e19bb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_33368176d3fe42f4269d0ccedf6987d2 = $(`<div id="html_33368176d3fe42f4269d0ccedf6987d2" style="width: 100.0%; height: 100.0%;">Kisumu: KES 62.75</div>`)[0];
+                popup_e042230c76ed36e88cc7721ece8e19bb.setContent(html_33368176d3fe42f4269d0ccedf6987d2);
+            
+        
+
+        circle_marker_1c223896e68cf84c0af34c8375226b7b.bindPopup(popup_e042230c76ed36e88cc7721ece8e19bb)
+        ;
+
+        
+    
+    
+            var circle_marker_3d6384f5513c494247e3a1f8a8797906 = L.circleMarker(
+                [-1.366, 38.015],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_5602c91503f6ee23266331e7b44b7051 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_13ba1c1884b52cdeffdb6510b238bb2e = $(`<div id="html_13ba1c1884b52cdeffdb6510b238bb2e" style="width: 100.0%; height: 100.0%;">Kitui: KES 54.46</div>`)[0];
+                popup_5602c91503f6ee23266331e7b44b7051.setContent(html_13ba1c1884b52cdeffdb6510b238bb2e);
+            
+        
+
+        circle_marker_3d6384f5513c494247e3a1f8a8797906.bindPopup(popup_5602c91503f6ee23266331e7b44b7051)
+        ;
+
+        
+    
+    
+            var circle_marker_20a8d82cac9e2fe4d47a3566314a1218 = L.circleMarker(
+                [-4.175, 39.458],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_5fd6695669cff7f897a98a09ddd9c4bb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6d6d9a8726b8cf883e3632f637420142 = $(`<div id="html_6d6d9a8726b8cf883e3632f637420142" style="width: 100.0%; height: 100.0%;">Kwale: KES 103.85</div>`)[0];
+                popup_5fd6695669cff7f897a98a09ddd9c4bb.setContent(html_6d6d9a8726b8cf883e3632f637420142);
+            
+        
+
+        circle_marker_20a8d82cac9e2fe4d47a3566314a1218.bindPopup(popup_5fd6695669cff7f897a98a09ddd9c4bb)
+        ;
+
+        
+    
+    
+            var circle_marker_084073c1f9b07306a35d3c81bbe96698 = L.circleMarker(
+                [0.421, 36.787],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_16dadfb0026487d95f2d6c10d19c8faf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_484ab83447ed8a49dcd408b52d5c5993 = $(`<div id="html_484ab83447ed8a49dcd408b52d5c5993" style="width: 100.0%; height: 100.0%;">Laikipia: KES 63.43</div>`)[0];
+                popup_16dadfb0026487d95f2d6c10d19c8faf.setContent(html_484ab83447ed8a49dcd408b52d5c5993);
+            
+        
+
+        circle_marker_084073c1f9b07306a35d3c81bbe96698.bindPopup(popup_16dadfb0026487d95f2d6c10d19c8faf)
+        ;
+
+        
+    
+    
+            var circle_marker_e828ad251edcd021adcf134038bdd6fa = L.circleMarker(
+                [-2.162, 40.902],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_c6bf7e61c278f0b03c84ca400b53826f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b372aa2cad375d6f5ac4cbad80b5bc0d = $(`<div id="html_b372aa2cad375d6f5ac4cbad80b5bc0d" style="width: 100.0%; height: 100.0%;">Lamu: KES 72.84</div>`)[0];
+                popup_c6bf7e61c278f0b03c84ca400b53826f.setContent(html_b372aa2cad375d6f5ac4cbad80b5bc0d);
+            
+        
+
+        circle_marker_e828ad251edcd021adcf134038bdd6fa.bindPopup(popup_c6bf7e61c278f0b03c84ca400b53826f)
+        ;
+
+        
+    
+    
+            var circle_marker_353f81e68aaf91514968b3c13d55eaea = L.circleMarker(
+                [-1.517, 37.263],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_fdfbc38c6a2cf042c211cdfbda6a4276 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_16b66bab7744ecf11fa4e267b157f8f9 = $(`<div id="html_16b66bab7744ecf11fa4e267b157f8f9" style="width: 100.0%; height: 100.0%;">Machakos: KES 51.33</div>`)[0];
+                popup_fdfbc38c6a2cf042c211cdfbda6a4276.setContent(html_16b66bab7744ecf11fa4e267b157f8f9);
+            
+        
+
+        circle_marker_353f81e68aaf91514968b3c13d55eaea.bindPopup(popup_fdfbc38c6a2cf042c211cdfbda6a4276)
+        ;
+
+        
+    
+    
+            var circle_marker_968619d1a1e042b89de3e2299617acec = L.circleMarker(
+                [-2.247, 37.892],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_16f32615859a389bcd70d7001da575bd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9298b3444038cdaa2ddb923e6a61344e = $(`<div id="html_9298b3444038cdaa2ddb923e6a61344e" style="width: 100.0%; height: 100.0%;">Makueni: KES 57.92</div>`)[0];
+                popup_16f32615859a389bcd70d7001da575bd.setContent(html_9298b3444038cdaa2ddb923e6a61344e);
+            
+        
+
+        circle_marker_968619d1a1e042b89de3e2299617acec.bindPopup(popup_16f32615859a389bcd70d7001da575bd)
+        ;
+
+        
+    
+    
+            var circle_marker_803b7413cfc3e7eb541352fba69ea284 = L.circleMarker(
+                [3.937, 41.847],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_ac89d6fdb5aae690f3f8d416566fc550 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2750e71c1504dce5105fee040d5bafd3 = $(`<div id="html_2750e71c1504dce5105fee040d5bafd3" style="width: 100.0%; height: 100.0%;">Mandera: KES 69.45</div>`)[0];
+                popup_ac89d6fdb5aae690f3f8d416566fc550.setContent(html_2750e71c1504dce5105fee040d5bafd3);
+            
+        
+
+        circle_marker_803b7413cfc3e7eb541352fba69ea284.bindPopup(popup_ac89d6fdb5aae690f3f8d416566fc550)
+        ;
+
+        
+    
+    
+            var circle_marker_31820846d66d10c57831f8a366494b09 = L.circleMarker(
+                [3.544, 37.998],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_ec9daa358e7152ac84bd27c9bc27239a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b2b70c58276af737348e38a47b4c639d = $(`<div id="html_b2b70c58276af737348e38a47b4c639d" style="width: 100.0%; height: 100.0%;">Marsabit: KES 39.72</div>`)[0];
+                popup_ec9daa358e7152ac84bd27c9bc27239a.setContent(html_b2b70c58276af737348e38a47b4c639d);
+            
+        
+
+        circle_marker_31820846d66d10c57831f8a366494b09.bindPopup(popup_ec9daa358e7152ac84bd27c9bc27239a)
+        ;
+
+        
+    
+    
+            var circle_marker_646295f600c3aa22d0d68264f74feb8b = L.circleMarker(
+                [0.355, 37.655],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_9888fa67371fd334181e306fc2bb19b6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_151837dcccffee03fd821ebc3897e9b9 = $(`<div id="html_151837dcccffee03fd821ebc3897e9b9" style="width: 100.0%; height: 100.0%;">Meru: KES 53.44</div>`)[0];
+                popup_9888fa67371fd334181e306fc2bb19b6.setContent(html_151837dcccffee03fd821ebc3897e9b9);
+            
+        
+
+        circle_marker_646295f600c3aa22d0d68264f74feb8b.bindPopup(popup_9888fa67371fd334181e306fc2bb19b6)
+        ;
+
+        
+    
+    
+            var circle_marker_9d6a4b3d1e354b4a9a69b92338b33672 = L.circleMarker(
+                [-1.064, 34.473],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_b668cf960374e7381361289f12c1d54a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2f23656620f8932ff89312ece37037d7 = $(`<div id="html_2f23656620f8932ff89312ece37037d7" style="width: 100.0%; height: 100.0%;">Migori: KES 47.79</div>`)[0];
+                popup_b668cf960374e7381361289f12c1d54a.setContent(html_2f23656620f8932ff89312ece37037d7);
+            
+        
+
+        circle_marker_9d6a4b3d1e354b4a9a69b92338b33672.bindPopup(popup_b668cf960374e7381361289f12c1d54a)
+        ;
+
+        
+    
+    
+            var circle_marker_86149d0516753aabe8b1d37e38d08441 = L.circleMarker(
+                [-4.043, 39.668],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_6cd6c6c85e7f076cb9556978917beeb3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_50e56498db27b18327ceced2474e0594 = $(`<div id="html_50e56498db27b18327ceced2474e0594" style="width: 100.0%; height: 100.0%;">Mombasa: KES 63.75</div>`)[0];
+                popup_6cd6c6c85e7f076cb9556978917beeb3.setContent(html_50e56498db27b18327ceced2474e0594);
+            
+        
+
+        circle_marker_86149d0516753aabe8b1d37e38d08441.bindPopup(popup_6cd6c6c85e7f076cb9556978917beeb3)
+        ;
+
+        
+    
+    
+            var circle_marker_4996dff64d8d28b53c3bfd5e514b861a = L.circleMarker(
+                [-0.783, 36.605],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_d43699f36b6bf18418b7b84ee1e6bb9f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cb99c3f6462aec28dd924671fe7e4057 = $(`<div id="html_cb99c3f6462aec28dd924671fe7e4057" style="width: 100.0%; height: 100.0%;">Murang'a: KES 66.21</div>`)[0];
+                popup_d43699f36b6bf18418b7b84ee1e6bb9f.setContent(html_cb99c3f6462aec28dd924671fe7e4057);
+            
+        
+
+        circle_marker_4996dff64d8d28b53c3bfd5e514b861a.bindPopup(popup_d43699f36b6bf18418b7b84ee1e6bb9f)
+        ;
+
+        
+    
+    
+            var circle_marker_2e070d92e01f4aa7ff0197b4c2e51838 = L.circleMarker(
+                [-1.286, 36.816],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_ab450e2f38594536e2ccf2a8115a2830 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2f4674d851b8ca10b93c6503078f4feb = $(`<div id="html_2f4674d851b8ca10b93c6503078f4feb" style="width: 100.0%; height: 100.0%;">Nairobi: KES 80.19</div>`)[0];
+                popup_ab450e2f38594536e2ccf2a8115a2830.setContent(html_2f4674d851b8ca10b93c6503078f4feb);
+            
+        
+
+        circle_marker_2e070d92e01f4aa7ff0197b4c2e51838.bindPopup(popup_ab450e2f38594536e2ccf2a8115a2830)
+        ;
+
+        
+    
+    
+            var circle_marker_609215c62e14c5e0718638affe35161d = L.circleMarker(
+                [-0.303, 36.188],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_96387c5cf0d99314769e9fb083188c70 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1fd840f000dcf630ce422fd1a874d6f6 = $(`<div id="html_1fd840f000dcf630ce422fd1a874d6f6" style="width: 100.0%; height: 100.0%;">Nakuru: KES 53.90</div>`)[0];
+                popup_96387c5cf0d99314769e9fb083188c70.setContent(html_1fd840f000dcf630ce422fd1a874d6f6);
+            
+        
+
+        circle_marker_609215c62e14c5e0718638affe35161d.bindPopup(popup_96387c5cf0d99314769e9fb083188c70)
+        ;
+
+        
+    
+    
+            var circle_marker_d69d545bb2cfc358dc6db3c1ab77bf4a = L.circleMarker(
+                [0.205, 35.117],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_7210c2df69bd259d33ec18fed8d47d58 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fb0db8c61e19e405ae7a46dae5e95fe8 = $(`<div id="html_fb0db8c61e19e405ae7a46dae5e95fe8" style="width: 100.0%; height: 100.0%;">Nandi: KES 64.54</div>`)[0];
+                popup_7210c2df69bd259d33ec18fed8d47d58.setContent(html_fb0db8c61e19e405ae7a46dae5e95fe8);
+            
+        
+
+        circle_marker_d69d545bb2cfc358dc6db3c1ab77bf4a.bindPopup(popup_7210c2df69bd259d33ec18fed8d47d58)
+        ;
+
+        
+    
+    
+            var circle_marker_72e03f6eb8d0e680f4e901c795e1b6a3 = L.circleMarker(
+                [-1.145, 35.86],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_39fab9f3cffbfee92271c3cb3a573605 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4ed5dc347fb337a7b416412282683279 = $(`<div id="html_4ed5dc347fb337a7b416412282683279" style="width: 100.0%; height: 100.0%;">Narok: KES 58.76</div>`)[0];
+                popup_39fab9f3cffbfee92271c3cb3a573605.setContent(html_4ed5dc347fb337a7b416412282683279);
+            
+        
+
+        circle_marker_72e03f6eb8d0e680f4e901c795e1b6a3.bindPopup(popup_39fab9f3cffbfee92271c3cb3a573605)
+        ;
+
+        
+    
+    
+            var circle_marker_695aecd042c9e423eb7e6e1790fc4e4d = L.circleMarker(
+                [-0.566, 34.935],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_1d5bd3adfaad7d57f0ff6e382b18b7c4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_698cef1adc3ed275c00a608dc29644dc = $(`<div id="html_698cef1adc3ed275c00a608dc29644dc" style="width: 100.0%; height: 100.0%;">Nyamira: KES 62.62</div>`)[0];
+                popup_1d5bd3adfaad7d57f0ff6e382b18b7c4.setContent(html_698cef1adc3ed275c00a608dc29644dc);
+            
+        
+
+        circle_marker_695aecd042c9e423eb7e6e1790fc4e4d.bindPopup(popup_1d5bd3adfaad7d57f0ff6e382b18b7c4)
+        ;
+
+        
+    
+    
+            var circle_marker_2039c7290e7a922d7ae9a8e579aff99d = L.circleMarker(
+                [-0.258, 36.574],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_08f61b02e0a25b7b73b31db24ffadca8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_39da40d9dc21b9238cfa13ed1e526ba4 = $(`<div id="html_39da40d9dc21b9238cfa13ed1e526ba4" style="width: 100.0%; height: 100.0%;">Nyandarua: KES 61.39</div>`)[0];
+                popup_08f61b02e0a25b7b73b31db24ffadca8.setContent(html_39da40d9dc21b9238cfa13ed1e526ba4);
+            
+        
+
+        circle_marker_2039c7290e7a922d7ae9a8e579aff99d.bindPopup(popup_08f61b02e0a25b7b73b31db24ffadca8)
+        ;
+
+        
+    
+    
+            var circle_marker_85aba0622df9c46825123e54b1dbe3c0 = L.circleMarker(
+                [-0.419, 36.947],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_0b52dd89de008a1eb82e51dcb654c400 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_93aeab313daaac374e0663483e2f252c = $(`<div id="html_93aeab313daaac374e0663483e2f252c" style="width: 100.0%; height: 100.0%;">Nyeri: KES 64.86</div>`)[0];
+                popup_0b52dd89de008a1eb82e51dcb654c400.setContent(html_93aeab313daaac374e0663483e2f252c);
+            
+        
+
+        circle_marker_85aba0622df9c46825123e54b1dbe3c0.bindPopup(popup_0b52dd89de008a1eb82e51dcb654c400)
+        ;
+
+        
+    
+    
+            var circle_marker_d55d2c3aa7c8daa1645ff58a6ca5f797 = L.circleMarker(
+                [0.993, 37.537],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_b3f7eed0c5b58a23aed404356ac8f822 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c051f6c8a0086a700ae1360657d2f2e2 = $(`<div id="html_c051f6c8a0086a700ae1360657d2f2e2" style="width: 100.0%; height: 100.0%;">Samburu: KES 56.81</div>`)[0];
+                popup_b3f7eed0c5b58a23aed404356ac8f822.setContent(html_c051f6c8a0086a700ae1360657d2f2e2);
+            
+        
+
+        circle_marker_d55d2c3aa7c8daa1645ff58a6ca5f797.bindPopup(popup_b3f7eed0c5b58a23aed404356ac8f822)
+        ;
+
+        
+    
+    
+            var circle_marker_716573d97a753baecdf336c32180a88d = L.circleMarker(
+                [-0.133, 34.266],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_896f53ce29f133fd30f611a2c7427c80 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_81f61ac8eeceb8511fb8daccd58213c5 = $(`<div id="html_81f61ac8eeceb8511fb8daccd58213c5" style="width: 100.0%; height: 100.0%;">Siaya: KES 53.58</div>`)[0];
+                popup_896f53ce29f133fd30f611a2c7427c80.setContent(html_81f61ac8eeceb8511fb8daccd58213c5);
+            
+        
+
+        circle_marker_716573d97a753baecdf336c32180a88d.bindPopup(popup_896f53ce29f133fd30f611a2c7427c80)
+        ;
+
+        
+    
+    
+            var circle_marker_0c3e14e16df34a7bd724f25474153d7b = L.circleMarker(
+                [-3.316, 37.757],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_0530e9fb2d35f8f6c5dab4c246cb2282 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_50ecd2b3f9db016dcbc54399180a9e0c = $(`<div id="html_50ecd2b3f9db016dcbc54399180a9e0c" style="width: 100.0%; height: 100.0%;">Taita-Taveta: KES 54.34</div>`)[0];
+                popup_0530e9fb2d35f8f6c5dab4c246cb2282.setContent(html_50ecd2b3f9db016dcbc54399180a9e0c);
+            
+        
+
+        circle_marker_0c3e14e16df34a7bd724f25474153d7b.bindPopup(popup_0530e9fb2d35f8f6c5dab4c246cb2282)
+        ;
+
+        
+    
+    
+            var circle_marker_ad5c62d8026722913c089f92e05da977 = L.circleMarker(
+                [-1.845, 39.507],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_88041f23872dec66edc08aa08f85c087 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_80b9b31c9aa2e522e120c1baa9155367 = $(`<div id="html_80b9b31c9aa2e522e120c1baa9155367" style="width: 100.0%; height: 100.0%;">Tana River: KES 74.24</div>`)[0];
+                popup_88041f23872dec66edc08aa08f85c087.setContent(html_80b9b31c9aa2e522e120c1baa9155367);
+            
+        
+
+        circle_marker_ad5c62d8026722913c089f92e05da977.bindPopup(popup_88041f23872dec66edc08aa08f85c087)
+        ;
+
+        
+    
+    
+            var circle_marker_a8c08ce598b622a67c5d4c6c08813af0 = L.circleMarker(
+                [-0.283, 37.908],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_b4f32cb9ff51a1631068b4e76811e32d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8f1b766c1f3366c888cda6a727581c80 = $(`<div id="html_8f1b766c1f3366c888cda6a727581c80" style="width: 100.0%; height: 100.0%;">Tharaka-Nithi: KES 60.28</div>`)[0];
+                popup_b4f32cb9ff51a1631068b4e76811e32d.setContent(html_8f1b766c1f3366c888cda6a727581c80);
+            
+        
+
+        circle_marker_a8c08ce598b622a67c5d4c6c08813af0.bindPopup(popup_b4f32cb9ff51a1631068b4e76811e32d)
+        ;
+
+        
+    
+    
+            var circle_marker_1b74af8d9b9d6a5e1a22e9bf93def2e7 = L.circleMarker(
+                [1.01, 35.021],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_93c243e5dcc3d4a9fbd7853bd1471012 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_81090492a2d5601ebe31666e30b2dd71 = $(`<div id="html_81090492a2d5601ebe31666e30b2dd71" style="width: 100.0%; height: 100.0%;">Trans Nzoia: KES 68.62</div>`)[0];
+                popup_93c243e5dcc3d4a9fbd7853bd1471012.setContent(html_81090492a2d5601ebe31666e30b2dd71);
+            
+        
+
+        circle_marker_1b74af8d9b9d6a5e1a22e9bf93def2e7.bindPopup(popup_93c243e5dcc3d4a9fbd7853bd1471012)
+        ;
+
+        
+    
+    
+            var circle_marker_77fd14387fc0adfe76cb3512ecfe90e5 = L.circleMarker(
+                [3.118, 35.587],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_e66b9c797374ea1e9dc5f68f69848437 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0579c048801fadd349319fe768a72bff = $(`<div id="html_0579c048801fadd349319fe768a72bff" style="width: 100.0%; height: 100.0%;">Turkana: KES 95.63</div>`)[0];
+                popup_e66b9c797374ea1e9dc5f68f69848437.setContent(html_0579c048801fadd349319fe768a72bff);
+            
+        
+
+        circle_marker_77fd14387fc0adfe76cb3512ecfe90e5.bindPopup(popup_e66b9c797374ea1e9dc5f68f69848437)
+        ;
+
+        
+    
+    
+            var circle_marker_0ad298e97ad55113fd8382640a2ffc91 = L.circleMarker(
+                [0.539, 35.283],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_fb82bb1edb48ee4b9e68e829bb1a843f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f404e61d3edd3649da2444c384ed1f7d = $(`<div id="html_f404e61d3edd3649da2444c384ed1f7d" style="width: 100.0%; height: 100.0%;">Uasin-Gishu: KES 63.30</div>`)[0];
+                popup_fb82bb1edb48ee4b9e68e829bb1a843f.setContent(html_f404e61d3edd3649da2444c384ed1f7d);
+            
+        
+
+        circle_marker_0ad298e97ad55113fd8382640a2ffc91.bindPopup(popup_fb82bb1edb48ee4b9e68e829bb1a843f)
+        ;
+
+        
+    
+    
+            var circle_marker_1054fe750109f7f203e5acc2fd72a3a6 = L.circleMarker(
+                [0.023, 34.729],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_699c1d67b25e832fecacb1728b4fc246 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f4f2d30d8b4c16b65258d4dc7530a7c9 = $(`<div id="html_f4f2d30d8b4c16b65258d4dc7530a7c9" style="width: 100.0%; height: 100.0%;">Vihiga: KES 63.18</div>`)[0];
+                popup_699c1d67b25e832fecacb1728b4fc246.setContent(html_f4f2d30d8b4c16b65258d4dc7530a7c9);
+            
+        
+
+        circle_marker_1054fe750109f7f203e5acc2fd72a3a6.bindPopup(popup_699c1d67b25e832fecacb1728b4fc246)
+        ;
+
+        
+    
+    
+            var circle_marker_e55af212c7a8def584c1e104bebb09de = L.circleMarker(
+                [1.748, 40.06],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_100da4da4129a66e911dfd81e3b683c0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c0040760c243bd6f112b5484362110b9 = $(`<div id="html_c0040760c243bd6f112b5484362110b9" style="width: 100.0%; height: 100.0%;">Wajir: KES 87.78</div>`)[0];
+                popup_100da4da4129a66e911dfd81e3b683c0.setContent(html_c0040760c243bd6f112b5484362110b9);
+            
+        
+
+        circle_marker_e55af212c7a8def584c1e104bebb09de.bindPopup(popup_100da4da4129a66e911dfd81e3b683c0)
+        ;
+
+        
+    
+    
+            var circle_marker_e124091dff29996d94d9cea316fc6a13 = L.circleMarker(
+                [1.532, 35.162],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_9e00e0ff285ea3074bf82579560d75e5);
+        
+    
+        var popup_3e04ce8e46de09118bf9e77f9035a624 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d5f3be12508a50d934e1e07beb7c08ad = $(`<div id="html_d5f3be12508a50d934e1e07beb7c08ad" style="width: 100.0%; height: 100.0%;">West Pokot: KES 53.10</div>`)[0];
+                popup_3e04ce8e46de09118bf9e77f9035a624.setContent(html_d5f3be12508a50d934e1e07beb7c08ad);
+            
+        
+
+        circle_marker_e124091dff29996d94d9cea316fc6a13.bindPopup(popup_3e04ce8e46de09118bf9e77f9035a624)
+        ;
+
+        
+    
+</script>
+</html>
