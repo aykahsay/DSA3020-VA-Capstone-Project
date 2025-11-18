@@ -97,7 +97,28 @@ The project follows the **CRISP-DM (Cross-Industry Standard Process for Data Min
    * MAE (50%): measures the average magnitude of errors between predicted and actual values. This metric is less sensitive to outliers compared to other error metrics such as Mean Squared Error (MSE). It is a suitable choice for financial forecasting.
 RMSE (50%): measures the deviation of your predictions from the actual values, but penalises large errors more heavily.
    * Fine-tune hyperparameters and interpret results in a business context.
+   
+This project forecasts weekly white maize prices in selected Kenyan counties (Kiambu, Kirinyaga, Mombasa, Nairobi, Uasin-Gishu) using KAMIS and AgriBORA datasets. Historical prices were aggregated weekly, and lag features were created to improve predictions.
 
+## Modeling Approach
+
+* **Linear Regression (LR):** Captures overall price trends using lag features.
+* **Random Forest (RF):** Captures short-term fluctuations but may **overfit**, performing exceptionally on training data but less accurately on unseen weeks.
+
+## Model Performance
+
+| Model | Training MAE | Test MAE | Training R² | Test R² |
+| ----- | ------------ | -------- | ----------- | ------- |
+| LR    | 3.41         | 2.39     | 0.91        | 0.78    |
+| RF    | 1.75         | 4.14     | 0.98        | 0.67    |
+
+> **Overfitting and under Fitting :** Random Forest fits the training data closely, capturing every fluctuation. This can lead to poor generalization on new or unseen data, as reflected in the higher test MAE and lower test R².
+
+## Insights
+
+* Lag features are strong predictors of weekly prices.
+* LR is more stable for general trends, while RF is better at modeling volatility but requires careful tuning.
+* Forecasting 6 weeks ahead is feasible using the trained models.
 5. **Deployment:**
 
    * Save final model using `joblib` or `pickle`.
