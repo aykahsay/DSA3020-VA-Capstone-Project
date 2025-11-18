@@ -66,8 +66,6 @@ Accurate forecasts will help farmers:
 | Wholesale                | Wholesale price per Kg                                   |
 | Unit                     | Unit of measurement                                      |
 
-Here’s a polished and professional **README** draft for your GitHub project, incorporating the information you provided and structuring it in a way that’s clear, informative, and appealing to potential users or collaborators:
-
 ---
 
 ### Methodology
@@ -89,7 +87,7 @@ The project follows the **CRISP-DM (Cross-Industry Standard Process for Data Min
 
    * Compare multiple regression models (e.g., Linear Regression, Random Forest, Gradient Boosting, LSTM for time series).
    * Feature engineering to improve predictive power.
-
+     
 4. **Evaluation & Tuning:**
 
    * Use cross-validation and appropriate regression metrics (RMSE, MAE, R²).
@@ -97,7 +95,35 @@ The project follows the **CRISP-DM (Cross-Industry Standard Process for Data Min
    * MAE (50%): measures the average magnitude of errors between predicted and actual values. This metric is less sensitive to outliers compared to other error metrics such as Mean Squared Error (MSE). It is a suitable choice for financial forecasting.
 RMSE (50%): measures the deviation of your predictions from the actual values, but penalises large errors more heavily.
    * Fine-tune hyperparameters and interpret results in a business context.
+   
+This project forecasts weekly white maize prices in selected Kenyan counties (Kiambu, Kirinyaga, Mombasa, Nairobi, Uasin-Gishu) using KAMIS and AgriBORA datasets. Historical prices were aggregated weekly, and lag features were created to improve predictions.
 
+## Modeling Approach
+
+* **Linear Regression (LR):** Captures overall price trends using lag features.
+<img width="845" height="396" alt="image" src="https://github.com/user-attachments/assets/65a0b359-f9ec-44d6-84ad-a71d947b3b97" />
+
+**Retail price = 2.21 + (0.68 * P.L1)**
+* **Random Forest (RF):** Captures short-term fluctuations but may **overfit**, performing exceptionally on training data but less accurately on unseen weeks.
+<img width="845" height="396" alt="image" src="https://github.com/user-attachments/assets/d17f3de4-3dd7-4b4e-82fa-4cd7e5bc0fee" />
+
+
+
+## Model Performance
+
+| Model | Training MAE | Test MAE | Training R² | Test R² |
+| ----- | ------------ | -------- | ----------- | ------- |
+| LR    | 3.12         | 3.97     | 0.91        | 0.78    |
+| RF    | 1.37         | 6.61     | 0.98        | 0.67    |
+| RF_tune   | 2.51        | 4.83     | 0.94       | 0.73   |
+
+> **Overfitting and under Fitting :** Random Forest fits the training data closely, capturing every fluctuation. This can lead to poor generalization on new or unseen data, as reflected in the higher test MAE and lower test R².
+
+## Insights
+
+* Lag features are strong predictors of weekly prices.
+* LR is more stable for general trends, while RF is better at modeling volatility but requires careful tuning.
+* Forecasting 6 weeks ahead is feasible using the trained models.
 5. **Deployment:**
 
    * Save final model using `joblib` or `pickle`.
