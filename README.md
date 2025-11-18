@@ -89,11 +89,7 @@ The project follows the **CRISP-DM (Cross-Industry Standard Process for Data Min
 
    * Compare multiple regression models (e.g., Linear Regression, Random Forest, Gradient Boosting, LSTM for time series).
    * Feature engineering to improve predictive power.
-    |<-------------- TRAIN ------------->|<---- TEST ---->|<---- FORECAST ---->|
- historical data                      known but        completely future
- the model learns from                unused           model predicts
-
-
+     
 4. **Evaluation & Tuning:**
 
    * Use cross-validation and appropriate regression metrics (RMSE, MAE, R²).
