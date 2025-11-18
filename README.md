@@ -66,8 +66,6 @@ Accurate forecasts will help farmers:
 | Wholesale                | Wholesale price per Kg                                   |
 | Unit                     | Unit of measurement                                      |
 
-Here’s a polished and professional **README** draft for your GitHub project, incorporating the information you provided and structuring it in a way that’s clear, informative, and appealing to potential users or collaborators:
-
 ---
 
 ### Methodology
@@ -103,14 +101,20 @@ This project forecasts weekly white maize prices in selected Kenyan counties (Ki
 ## Modeling Approach
 
 * **Linear Regression (LR):** Captures overall price trends using lag features.
+<img width="845" height="396" alt="image" src="https://github.com/user-attachments/assets/65a0b359-f9ec-44d6-84ad-a71d947b3b97" />
+
+**Retail price = 2.21 + (0.68 * P.L1)**
 * **Random Forest (RF):** Captures short-term fluctuations but may **overfit**, performing exceptionally on training data but less accurately on unseen weeks.
+<img width="845" height="396" alt="image" src="https://github.com/user-attachments/assets/d17f3de4-3dd7-4b4e-82fa-4cd7e5bc0fee" />
+
+
 
 ## Model Performance
 
 | Model | Training MAE | Test MAE | Training R² | Test R² |
 | ----- | ------------ | -------- | ----------- | ------- |
-| LR    | 3.41         | 2.39     | 0.91        | 0.78    |
-| RF    | 1.75         | 4.14     | 0.98        | 0.67    |
+| LR    | 3.12         | 3.97     | 0.91        | 0.78    |
+| RF    | 1.37         | 6.61     | 0.98        | 0.67    |
 
 > **Overfitting and under Fitting :** Random Forest fits the training data closely, capturing every fluctuation. This can lead to poor generalization on new or unseen data, as reflected in the higher test MAE and lower test R².
 
